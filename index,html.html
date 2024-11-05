@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clone Commanders</title>
+    
+    <!-- Link to Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -29,17 +33,28 @@
         .row3 { background-color: rgba(204, 229, 255, 0.8); }
         .row4 { background-color: rgba(204, 255, 204, 0.8); }
         .row5 { background-color: rgba(128, 128, 128, 0.8); }
+        
+        /* Abilities list styling for better alignment */
         .abilities {
             list-style-type: none;
             padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+        .abilities li {
+            padding-left: 20px;
+            text-indent: -20px;
         }
         .abilities li:before {
-            content: "⚙️ ";
+            content: "⚙️";
+            font-weight: bold;
             padding-right: 5px;
         }
+        
         img {
             border-radius: 10px;
             width: 100px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -54,63 +69,75 @@
         <th>Ability</th>
     </tr>
     <tr class="row1">
-        <td><img src="https://i.pinimg.com/originals/62/a9/93/62a993701c6491556bc8f5281114d337.png" alt="fox"></td>
+        <td><img src="https://i.pinimg.com/originals/62/a9/93/62a993701c6491556bc8f5281114d337.png" alt="fox" class="shakeable"></td>
         <td>Known for his red-marked armor, Commander Fox is a dedicated and loyal clone trooper who leads the Coruscant Guard, enforcing law and order on Coruscant and protecting key Republic figures.</td>
         <td>
             <ul class="abilities">
-                <li>Coruscant Guard</li>
-                <li>Defensive Tactics</li>
-                <li>Tactical Leadership</li>
+                <li>CG</li> <!--note CG means coruscant guard but since if i type it it will overlap and it wont be aligned-->
+                <li>Tactics</li>
+                <li>Unique Armor</li>
                 <li>Loyalty</li>
             </ul>
         </td>
     </tr>
     <tr class="row2">
-        <td><img src="https://cdnb.artstation.com/p/assets/images/images/013/805/687/large/darren-tan-swd-commandercody-cu.jpg?1541162283" alt="cody"></td>
+        <td><img src="https://cdnb.artstation.com/p/assets/images/images/013/805/687/large/darren-tan-swd-commandercody-cu.jpg?1541162283" alt="cody" class="shakeable"></td>
         <td>Trusted by Jedi General Obi-Wan Kenobi, Commander Cody is a strategic and adaptable leader of the 212th Attack Battalion, distinguished by his technological skills and unwavering loyalty to the Republic.</td>
         <td>
             <ul class="abilities">
-                <li> Adaptability </li>
-                <li>7th sky corps</li>
-                <li>Advanced Military Operator</li>
+                <li>Adaptability</li>
+                <li>7th Sky Corps</li>
+                <li>Unique armor</li>
                 <li>Loyalty</li>
             </ul>
         </td>
     </tr>
     <tr class="row3">
-        <td><img src="https://wallpaperaccess.com/full/10845450.jpg" alt="rex"></td>
+        <td><img src="https://wallpaperaccess.com/full/10845450.jpg" alt="rex" class="shakeable"></td>
         <td>A skilled and respected leader within the 501st Legion, Captain Rex is known for his loyalty, combat prowess, and integrity, often balancing his duty to the Republic with a strong moral compass.</td>
         <td>
             <ul class="abilities">
-                <li>Battle experience</li>
-                <li>501st legion</li>
+                <li>Experience</li>
+                <li>501st Legion</li>
                 <li>Weapon Variety</li>
                 <li>Loyalty</li>
             </ul>
         </td>
     </tr>
     <tr class="row4">
-        <td><img src="https://th.bing.com/th/id/OIP.NwQJnNHkUql0mhjIBdEgzwHaKD?rs=1&pid=ImgDetMain" alt="gree"></td>
+        <td><img src="https://th.bing.com/th/id/OIP.NwQJnNHkUql0mhjIBdEgzwHaKD?rs=1&pid=ImgDetMain" alt="gree" class="shakeable"></td>
         <td>Sporting green camouflaged armor, Commander Gree is an expert in reconnaissance and jungle combat, with a keen interest in alien cultures and a strict adherence to his orders.</td>
         <td>
             <ul class="abilities">
                 <li>Camouflage</li>
-                <li>Advanced Vehicles Handling </li>
-                <li>Battle Knowledge</li>
-                <li>41st elite corps</li>
+                <li>Leadership</li>
+                <li>Battle tactics</li>
+                <li>41st Elite Corps</li>
             </ul>
         </td>
     </tr>
     <tr class="row5">
-        <td><img src="https://th.bing.com/th/id/OIP.2lSf6ThiD5HirA0JGufUBgHaLH?w=1365&h=2048&rs=1&pid=ImgDetMain" alt="wolf"></td>
+        <td><img src="https://th.bing.com/th/id/OIP.2lSf6ThiD5HirA0JGufUBgHaLH?w=1365&h=2048&rs=1&pid=ImgDetMain" alt="wolf" class="shakeable"></td>
         <td>As the practical and tactical leader of the 104th Battalion, Commander Wolffe is known for his battle experience, sharp instincts, and unwavering loyalty to Jedi General Plo Koon.</td>
         <td>
             <ul class="abilities">
                 <li>Loyalty</li>
-                <li>104th battalion</li>
+                <li>104th Battalion</li>
                 <li>Proficiency</li>
                 <li>Loyalty</li>
             </ul>
+            <!-- JavaScript to trigger shake animation on click -->
+<script>
+    document.querySelectorAll('.shakeable').forEach(img => {
+        img.addEventListener('click', () => {
+            img.classList.add('animate__animated', 'animate__shakeX', 'shake-duration');
+            setTimeout(() => {
+                img.classList.remove('animate__animated', 'animate__shakeX', 'shake-duration');
+            }, 2000); // Remove the animation class after 2 seconds
+        });
+    });
+</script>
+<!-- Ok to be fair this javascript code cannot replicated into html-->
         </td>
     </tr>
 </table>
